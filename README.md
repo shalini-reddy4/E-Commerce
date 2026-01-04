@@ -36,20 +36,35 @@ Full-stack e-commerce platform built with **React** + **Node.js/Express** + **Mo
 ## 📁 Project Structure
 
 ecommerce-app/
+
 ├── client/ # React Frontend
+
 │ ├── public/ # Static assets
+
 │ ├── src/
+
 │ │ ├── components/ # Reusable UI
+
 │ │ ├── pages/ # Page components
+
 │ │ └── App.js # Main App
+
 │ └── package.json
+
 ├── config/ # Database config
+
 ├── controllers/ # Business logic
+
 ├── helpers/ # Utility functions
+
 ├── middlewares/ # Auth middleware
+
 ├── models/ # MongoDB schemas
+
 ├── routes/ # API routes
+
 ├── server.js # Express server
+
 ├── package.json # Root dependencies
 
 📦 Deployment
