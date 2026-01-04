@@ -9,45 +9,40 @@ import productRoutes from "./routes/productRoutes.js";
 import cors from "cors";
 import path from 'path';
 import { fileURLToPath } from "url";
-//configure env
-dotenv.config();
 
-//databse config
+dotenv.config();
 connectDB();
 
-//deploy
-//app.use(express.static(path.join(__dirname,'./client/build')));
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-//rest object
 const app = express();
 
-//middelwares
+// Middlewares
 app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
 
-//routes
+// ✅ STATIC FILES FIRST (manifest.json, js, css)
+app.use(express.static(path.join(__dirname, './client/build')));  // ← UNCOMMENT & MOVE UP
+
+// API Routes (before catch-all)
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/category", categoryRoutes);
 app.use("/api/v1/product", productRoutes);
 
-app.get("*",function(req,res){
-  res.sendFile(path.join(__dirname,"./client/build/index.html"));
-});
-
-//rest api
+// Homepage
 app.get("/", (req, res) => {
   res.send("<h1>Welcome to ecommerce app</h1>");
 });
 
-//PORT
-const PORT = process.env.PORT || 8080;
+// ✅ CATCH-ALL LAST (React Router fallback ONLY)
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, './client/build/index.html'));
+});
 
-//run listen
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(
-    `Server Running on ${process.env.DEV_MODE} mode on port ${PORT}`.bgCyan
-      .white
+    `Server Running on ${process.env.DEV_MODE} mode on port ${PORT}`.bgCyan.white
   );
 });
