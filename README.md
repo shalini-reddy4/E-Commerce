@@ -8,8 +8,6 @@ Full-stack e-commerce platform built with **React** + **Node.js/Express** + **Mo
 🌐 Live Website
 👉 https://e-commerce-web-app-5zdc.onrender.com
 
-**Link** https://e-commerce-web-app-5zdc.onrender.com
-
 ## ✨ Features
 
 ### 👤 **User Features**
