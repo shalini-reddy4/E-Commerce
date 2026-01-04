@@ -2,9 +2,9 @@
 
 Full-stack e-commerce platform built with **React** + **Node.js/Express** + **MongoDB**.
 
-## 🚀 Live Deployment
+## 🚀 Live Deployment (Demo)
 
-**Frontend + Backend:** https://ecommerce-web-app.onrender.com
+**Link** https://ecommerce-web-app.onrender.com
 
 ## ✨ Features
 
