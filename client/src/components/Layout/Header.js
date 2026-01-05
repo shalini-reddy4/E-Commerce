@@ -6,7 +6,7 @@ import SearchInput from "../Form/SearchInput";
 import useCategory from "../../hooks/useCategory";
 import { useCart } from "../../context/cart";
 import { Badge } from "antd";
-
+import ThemeToggle from "../ThemeToggle";
 const Header = () => {
   const [auth, setAuth] = useAuth();
   const [cart] = useCart();
@@ -40,6 +40,7 @@ const Header = () => {
               🛒 Ecommerce App
             </Link>
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+              <ThemeToggle />
               <SearchInput />
               <li className="nav-item">
                 <NavLink to="/" className="nav-link ">

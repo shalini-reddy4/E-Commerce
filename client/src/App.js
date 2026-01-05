@@ -24,6 +24,8 @@ import Search from "./pages/Search";
 import CartPage from "./pages/CartPage";
 import CategoryProduct from "./pages/CategoryProduct";
 import AdminOrders from "./pages/Admin/AdminOrders";
+
+
 function App() {
   return (
     <>
